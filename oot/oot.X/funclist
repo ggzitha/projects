@@ -1,0 +1,23 @@
+_setVol: CODE, 25228 0 24
+_setInstrument: CODE, 25180 0 24
+___ftpack: CODE, 24582 0 238
+_setBank: CODE, 25252 0 24
+_txMIDI: CODE, 25070 0 70
+_main: CODE, 23348 0 338
+_prelude: CODE, 9154 0 5558
+__initialization: CODE, 24990 0 74
+_lp_int: CODE, 24 0 408
+_playNote: CODE, 25320 0 20
+_stopNote: CODE, 25300 0 20
+_setTempo: CODE, 23686 0 306
+_bolero: CODE, 436 0 8718
+_storms: CODE, 14712 0 5412
+_nr: CODE, 24820 0 170
+_Delay10KTCYx: CODE, 25204 0 24
+i1_Delay10KTCYx: CODE, 25276 0 24
+___ftmul: CODE, 22910 0 438
+_forest: CODE, 20124 0 2786
+___fttol: CODE, 23992 0 304
+_midi_init: CODE, 25140 0 40
+___ftdiv: CODE, 24296 0 286
+Total: 25306

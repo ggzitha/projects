@@ -1,0 +1,2780 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"27 midi.h
+[v _setTempo `(v ~T0 @X0 0 ef1`f ]
+"23
+[v _setInstrument `(v ~T0 @X0 0 ef2`uc`uc ]
+"24
+[v _playNote `(v ~T0 @X0 0 ef2`uc`uc ]
+"28
+[v _nr `(v ~T0 @X0 0 ef1`uc ]
+"25
+[v _stopNote `(v ~T0 @X0 0 ef2`uc`uc ]
+"36 /Applications/microchip/xc8/v1.10/include/Delays.h
+[v _Delay10KTCYx `(v ~T0 @X0 0 ef1`uc ]
+"22 midi.h
+[v _setVol `(v ~T0 @X0 0 ef2`uc`uc ]
+[; ;oot_bank.h: 8: void storms(void);
+[; ;oot_bank.h: 9: void forest(void);
+[; ;oot_bank.h: 10: void bolero(void);
+[; ;oot_bank.h: 11: void prelude(void);
+[; ;midi.h: 20: void midi_init(void);
+[; ;midi.h: 21: void setBank(char channel, char bank);
+[; ;midi.h: 22: void setVol(char channel, char vol);
+[; ;midi.h: 23: void setInstrument(char channel, char instr);
+[; ;midi.h: 24: void playNote(char channel, char note);
+[; ;midi.h: 25: void stopNote(char channel, char note);
+[; ;midi.h: 26: void txMIDI(char cmd, char data1, char data2);
+[; ;midi.h: 27: void setTempo(float tempo);
+[; ;midi.h: 28: void nr(char type);
+[; ;Delays.h: 18: void Delay10TCYx(unsigned char);
+[; ;Delays.h: 24: void Delay100TCYx(unsigned char);
+[; ;Delays.h: 30: void Delay1KTCYx(unsigned char);
+[; ;Delays.h: 36: void Delay10KTCYx(unsigned char);
+"25 oot_bank.c
+[v _storms `(v ~T0 @X0 1 ef ]
+{
+[; ;oot_bank.c: 24: void storms(void)
+[; ;oot_bank.c: 25: {
+[e :U _storms ]
+[f ]
+"26
+[v _i `i ~T0 @X0 1 a ]
+[; ;oot_bank.c: 26: int i = 0;
+[e = _i -> 0 `i ]
+[; ;oot_bank.c: 28: setTempo(190);
+"28
+[e ( _setTempo (1 -> -> 190 `i `f ]
+[; ;oot_bank.c: 29: setInstrument(0,21);
+"29
+[e ( _setInstrument (2 , -> -> 0 `i `uc -> -> 21 `i `uc ]
+[; ;oot_bank.c: 30: setInstrument(1,21);
+"30
+[e ( _setInstrument (2 , -> -> 1 `i `uc -> -> 21 `i `uc ]
+[; ;oot_bank.c: 31: setInstrument(2,73);
+"31
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 73: playNote(0,50);
+"73
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 74: playNote(2,74);
+"74
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 75: nr('e');
+"75
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 76: stopNote(2,74);
+"76
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 77: playNote(2,77);
+"77
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 78: nr('e');
+"78
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 79: stopNote(2,77);
+"79
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 80: playNote(1,57);
+"80
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 81: playNote(2,86);
+"81
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 82: nr('q');
+"82
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 83: stopNote(1,57);
+"83
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 84: stopNote(2,86);
+"84
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 85: playNote(1,57);
+"85
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 86: nr('q');
+"86
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 87: stopNote(0,50);
+"87
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 88: stopNote(1,57);
+"88
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 90: playNote(0,52);
+"90
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 91: playNote(2,74);
+"91
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 92: nr('e');
+"92
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 93: stopNote(2,74);
+"93
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 94: playNote(2,77);
+"94
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 95: nr('e');
+"95
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 96: stopNote(2,77);
+"96
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 97: playNote(1,59);
+"97
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 98: playNote(2,86);
+"98
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 99: nr('h');
+"99
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 100: stopNote(0,52);
+"100
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 101: stopNote(1,59);
+"101
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 102: stopNote(2,86);
+"102
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 104: playNote(0,53);
+"104
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 53 `i `uc ]
+[; ;oot_bank.c: 105: playNote(2,88);
+"105
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 106: nr('q');
+"106
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 107: playNote(1,60);
+"107
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 108: nr('e');
+"108
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 109: stopNote(2,88);
+"109
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 110: playNote(2,89);
+"110
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 111: nr('e');
+"111
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 112: stopNote(2,89);
+"112
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 113: stopNote(1,60);
+"113
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 114: playNote(1,60);
+"114
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 115: playNote(2,88);
+"115
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 116: nr('e');
+"116
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 117: stopNote(2,88);
+"117
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 118: playNote(2,89);
+"118
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 119: nr('e');
+"119
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 120: stopNote(0,53);
+"120
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 53 `i `uc ]
+[; ;oot_bank.c: 121: stopNote(1,60);
+"121
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 122: stopNote(2,89);
+"122
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 124: playNote(0,52);
+"124
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 125: playNote(2,88);
+"125
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 126: nr('e');
+"126
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 127: stopNote(2,88);
+"127
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 128: playNote(2,84);
+"128
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 84 `i `uc ]
+[; ;oot_bank.c: 129: nr('e');
+"129
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 130: stopNote(2,84);
+"130
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 84 `i `uc ]
+[; ;oot_bank.c: 131: playNote(1,59);
+"131
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 132: playNote(2,81);
+"132
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 133: nr('h');
+"133
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 134: stopNote(0,52);
+"134
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 135: stopNote(1,59);
+"135
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 136: stopNote(2,81);
+"136
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 138: playNote(0,58);
+"138
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;oot_bank.c: 139: playNote(2,81);
+"139
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 140: nr('q');
+"140
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 141: stopNote(2,81);
+"141
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 142: playNote(1,70);
+"142
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 143: playNote(2,74);
+"143
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 144: nr('q');
+"144
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 145: stopNote(1,70);
+"145
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 146: stopNote(2,74);
+"146
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 147: playNote(1,70);
+"147
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 148: playNote(2,77);
+"148
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 149: nr('e');
+"149
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 150: stopNote(2,77);
+"150
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 151: playNote(2,79);
+"151
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 152: nr('e');
+"152
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 153: stopNote(0,58);
+"153
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;oot_bank.c: 154: stopNote(1,70);
+"154
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 155: stopNote(2,79);
+"155
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 157: playNote(0,53);
+"157
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 53 `i `uc ]
+[; ;oot_bank.c: 158: playNote(2,81);
+"158
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 159: nr('q');
+"159
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 160: playNote(1,72);
+"160
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 161: nr('q');
+"161
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 162: stopNote(1,72);
+"162
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 163: playNote(1,72);
+"163
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 164: nr('q');
+"164
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 165: stopNote(0,53);
+"165
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 53 `i `uc ]
+[; ;oot_bank.c: 166: stopNote(1,72);
+"166
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 167: stopNote(2,81);
+"167
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 169: playNote(0,58);
+"169
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;oot_bank.c: 170: playNote(2,81);
+"170
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 171: nr('q');
+"171
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 172: stopNote(2,81);
+"172
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 173: playNote(1,70);
+"173
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 174: playNote(2,74);
+"174
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 175: nr('q');
+"175
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 176: stopNote(1,70);
+"176
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 177: stopNote(2,74);
+"177
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 178: playNote(1,70);
+"178
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 179: playNote(2,77);
+"179
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 180: nr('e');
+"180
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 181: stopNote(2,77);
+"181
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 182: playNote(2,79);
+"182
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 183: nr('e');
+"183
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 184: stopNote(0,58);
+"184
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;oot_bank.c: 185: stopNote(1,70);
+"185
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 186: stopNote(2,79);
+"186
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 188: playNote(0,57);
+"188
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 189: playNote(2,76);
+"189
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 190: nr('q');
+"190
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 191: playNote(1,73);
+"191
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 192: nr('h');
+"192
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 193: stopNote(0,57);
+"193
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 194: stopNote(1,73);
+"194
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 195: stopNote(2,76);
+"195
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 200: playNote(0,50);
+"200
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 201: playNote(2,74);
+"201
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 202: nr('e');
+"202
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 203: stopNote(2,74);
+"203
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 204: playNote(2,77);
+"204
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 205: nr('e');
+"205
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 206: stopNote(2,77);
+"206
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 207: playNote(1,57);
+"207
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 208: playNote(2,86);
+"208
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 209: nr('q');
+"209
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 210: stopNote(1,57);
+"210
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 211: stopNote(2,86);
+"211
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 212: playNote(1,57);
+"212
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 213: nr('q');
+"213
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 214: stopNote(0,50);
+"214
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 215: stopNote(1,57);
+"215
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 217: playNote(0,52);
+"217
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 218: playNote(2,74);
+"218
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 219: nr('e');
+"219
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 220: stopNote(2,74);
+"220
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 221: playNote(2,77);
+"221
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 222: nr('e');
+"222
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 223: stopNote(2,77);
+"223
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 224: playNote(1,59);
+"224
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 225: playNote(2,86);
+"225
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 226: nr('h');
+"226
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 227: stopNote(0,52);
+"227
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 228: stopNote(1,59);
+"228
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 229: stopNote(2,86);
+"229
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 231: playNote(0,53);
+"231
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 53 `i `uc ]
+[; ;oot_bank.c: 232: playNote(2,88);
+"232
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 233: nr('q');
+"233
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 234: playNote(1,60);
+"234
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 235: nr('e');
+"235
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 236: stopNote(2,88);
+"236
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 237: playNote(2,89);
+"237
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 238: nr('e');
+"238
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 239: stopNote(2,89);
+"239
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 240: stopNote(1,60);
+"240
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 241: playNote(1,60);
+"241
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 242: playNote(2,88);
+"242
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 243: nr('e');
+"243
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 244: stopNote(2,88);
+"244
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 245: playNote(2,89);
+"245
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 246: nr('e');
+"246
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 247: stopNote(0,53);
+"247
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 53 `i `uc ]
+[; ;oot_bank.c: 248: stopNote(1,60);
+"248
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 249: stopNote(2,89);
+"249
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 89 `i `uc ]
+[; ;oot_bank.c: 251: playNote(0,52);
+"251
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 252: playNote(2,88);
+"252
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 253: nr('e');
+"253
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 254: stopNote(2,88);
+"254
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 88 `i `uc ]
+[; ;oot_bank.c: 255: playNote(2,84);
+"255
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 84 `i `uc ]
+[; ;oot_bank.c: 256: nr('e');
+"256
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 257: stopNote(2,84);
+"257
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 84 `i `uc ]
+[; ;oot_bank.c: 258: playNote(1,59);
+"258
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 259: playNote(2,81);
+"259
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 260: nr('h');
+"260
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 261: stopNote(0,52);
+"261
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 262: stopNote(1,59);
+"262
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 263: stopNote(2,81);
+"263
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 265: playNote(0,58);
+"265
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;oot_bank.c: 266: playNote(2,81);
+"266
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 267: nr('q');
+"267
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 268: stopNote(2,81);
+"268
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 269: playNote(1,70);
+"269
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 270: playNote(2,74);
+"270
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 271: nr('q');
+"271
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 272: stopNote(1,70);
+"272
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 273: stopNote(2,74);
+"273
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 274: playNote(1,70);
+"274
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 275: playNote(2,77);
+"275
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 276: nr('e');
+"276
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 277: stopNote(2,77);
+"277
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 278: playNote(2,79);
+"278
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 279: nr('e');
+"279
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 280: stopNote(0,58);
+"280
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 58 `i `uc ]
+[; ;oot_bank.c: 281: stopNote(1,70);
+"281
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 282: stopNote(2,79);
+"282
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 284: playNote(0,57);
+"284
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 285: playNote(2,81);
+"285
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 286: nr('q');
+"286
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 287: playNote(1,73);
+"287
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 288: nr('h');
+"288
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 289: stopNote(0,57);
+"289
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 290: stopNote(1,73);
+"290
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 291: stopNote(2,81);
+"291
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 293: playNote(0,50);
+"293
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 294: playNote(1,74);
+"294
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 295: playNote(2,74);
+"295
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 296: nr('q');
+"296
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 297: nr('h');
+"297
+[e ( _nr (1 -> -> 104 `ui `uc ]
+[; ;oot_bank.c: 298: stopNote(0,50);
+"298
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 299: stopNote(1,74);
+"299
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 300: stopNote(2,74);
+"300
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 303: }
+"303
+[e :UE 1 ]
+}
+"307
+[v _forest `(v ~T0 @X0 1 ef ]
+{
+[; ;oot_bank.c: 306: void forest(void)
+[; ;oot_bank.c: 307: {
+[e :U _forest ]
+[f ]
+[; ;oot_bank.c: 308: setTempo(100);
+"308
+[e ( _setTempo (1 -> -> 100 `i `f ]
+[; ;oot_bank.c: 309: setInstrument(0,0);
+"309
+[e ( _setInstrument (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;oot_bank.c: 310: setInstrument(1,46);
+"310
+[e ( _setInstrument (2 , -> -> 1 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 311: playNote(0,52);
+"311
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 312: playNote(1,64);
+"312
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 313: nr('e');
+"313
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 314: stopNote(1,64);
+"314
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 315: playNote(1,74);
+"315
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 316: nr('e');
+"316
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 317: stopNote(1,74);
+"317
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 318: stopNote(0,52);
+"318
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 320: playNote(0,64);
+"320
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 321: playNote(1,71);
+"321
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 71 `i `uc ]
+[; ;oot_bank.c: 322: nr('q');
+"322
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 323: stopNote(0,64);
+"323
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 324: stopNote(1,71);
+"324
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 71 `i `uc ]
+[; ;oot_bank.c: 326: playNote(0,64);
+"326
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 327: nr('q');
+"327
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 328: stopNote(0,64);
+"328
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 332: playNote(0,57);
+"332
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 333: playNote(1,69);
+"333
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 334: nr('e');
+"334
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 335: stopNote(1,69);
+"335
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 336: playNote(1,71);
+"336
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 71 `i `uc ]
+[; ;oot_bank.c: 337: nr('e');
+"337
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 338: stopNote(1,71);
+"338
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 71 `i `uc ]
+[; ;oot_bank.c: 339: stopNote(0,57);
+"339
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 341: playNote(0,61);
+"341
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 342: playNote(1,69);
+"342
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 343: nr('q');
+"343
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 344: stopNote(0,61);
+"344
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 345: stopNote(1,69);
+"345
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 347: playNote(0,61);
+"347
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 348: nr('q');
+"348
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 349: stopNote(0,61);
+"349
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 354: setInstrument(1,72);
+"354
+[e ( _setInstrument (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 356: playNote(0,52);
+"356
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 357: playNote(1,76);
+"357
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 358: nr('e');
+"358
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 359: stopNote(1,76);
+"359
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 360: playNote(1,86);
+"360
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 361: nr('e');
+"361
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 362: stopNote(1,86);
+"362
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 363: stopNote(0,52);
+"363
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 365: playNote(0,64);
+"365
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 366: playNote(1,83);
+"366
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 367: nr('q');
+"367
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 368: stopNote(0,64);
+"368
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 369: stopNote(1,83);
+"369
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 371: playNote(0,64);
+"371
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 372: nr('q');
+"372
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 373: stopNote(0,64);
+"373
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 377: playNote(0,57);
+"377
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 378: playNote(1,81);
+"378
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 379: nr('e');
+"379
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 380: stopNote(1,81);
+"380
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 381: playNote(1,83);
+"381
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 382: nr('e');
+"382
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 383: stopNote(1,83);
+"383
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 384: stopNote(0,57);
+"384
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 386: playNote(0,61);
+"386
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 387: playNote(1,81);
+"387
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 388: nr('q');
+"388
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 389: stopNote(0,61);
+"389
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 390: stopNote(1,81);
+"390
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 392: playNote(0,61);
+"392
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 393: nr('q');
+"393
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 394: stopNote(0,61);
+"394
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 399: setInstrument(1,72);
+"399
+[e ( _setInstrument (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 401: playNote(0,60);
+"401
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 402: playNote(1,72);
+"402
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 403: nr('e');
+"403
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 404: stopNote(1,72);
+"404
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 72 `i `uc ]
+[; ;oot_bank.c: 406: playNote(1,81);
+"406
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 407: nr('e');
+"407
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 408: stopNote(0,60);
+"408
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 60 `i `uc ]
+[; ;oot_bank.c: 409: stopNote(1,81);
+"409
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 411: playNote(0,76);
+"411
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 412: playNote(1,79);
+"412
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 413: nr('q');
+"413
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 414: stopNote(0,76);
+"414
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 415: stopNote(1,79);
+"415
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 417: playNote(0,76);
+"417
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 418: playNote(1,81);
+"418
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 419: nr('q');
+"419
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 420: stopNote(0,76);
+"420
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 421: stopNote(1,81);
+"421
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 423: playNote(0,62);
+"423
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 424: playNote(1,79);
+"424
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 425: Delay10KTCYx(20);
+"425
+[e ( _Delay10KTCYx (1 -> -> 20 `i `uc ]
+[; ;oot_bank.c: 426: stopNote(1,79);
+"426
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 428: playNote(1,81);
+"428
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 429: Delay10KTCYx(20);
+"429
+[e ( _Delay10KTCYx (1 -> -> 20 `i `uc ]
+[; ;oot_bank.c: 430: stopNote(1,81);
+"430
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 432: playNote(1,79);
+"432
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 433: Delay10KTCYx(20);
+"433
+[e ( _Delay10KTCYx (1 -> -> 20 `i `uc ]
+[; ;oot_bank.c: 434: stopNote(0,62);
+"434
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 435: stopNote(1,79);
+"435
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 437: playNote(0,78);
+"437
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 438: playNote(1,78);
+"438
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 439: nr('q');
+"439
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 440: stopNote(0,78);
+"440
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 442: playNote(0,78);
+"442
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 443: nr('q');
+"443
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 444: stopNote(0,78);
+"444
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 445: stopNote(1,78);
+"445
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 447: playNote(0,64);
+"447
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 448: playNote(1,76);
+"448
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 449: nr('w');
+"449
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 450: stopNote(0,64);
+"450
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 451: stopNote(1,76);
+"451
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 454: }
+"454
+[e :UE 2 ]
+}
+"457
+[v _bolero `(v ~T0 @X0 1 ef ]
+{
+[; ;oot_bank.c: 456: void bolero(void)
+[; ;oot_bank.c: 457: {
+[e :U _bolero ]
+[f ]
+[; ;oot_bank.c: 458: setTempo(120);
+"458
+[e ( _setTempo (1 -> -> 120 `i `f ]
+[; ;oot_bank.c: 459: setInstrument(1,45);
+"459
+[e ( _setInstrument (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 460: setVol(1,127);
+"460
+[e ( _setVol (2 , -> -> 1 `i `uc -> -> 127 `i `uc ]
+[; ;oot_bank.c: 461: setInstrument(2,46);
+"461
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 464: playNote(9,38);
+"464
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 465: playNote(1,41);
+"465
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 41 `i `uc ]
+[; ;oot_bank.c: 466: playNote(2,65);
+"466
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 467: nr('e');
+"467
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 468: stopNote(2,65);
+"468
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 469: playNote(2,62);
+"469
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 470: nr('e');
+"470
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 471: stopNote(9,38);
+"471
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 472: stopNote(1,41);
+"472
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 41 `i `uc ]
+[; ;oot_bank.c: 473: stopNote(2,62);
+"473
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 476: playNote(9,38);
+"476
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 477: playNote(2,65);
+"477
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 478: Delay10KTCYx(17);;
+"478
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 479: stopNote(9,38);
+"479
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 480: playNote(9,38);
+"480
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 481: Delay10KTCYx(8);;
+"481
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 482: stopNote(2,65);
+"482
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 483: playNote(2,62);
+"483
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 484: Delay10KTCYx(8);;
+"484
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 485: stopNote(9,38);
+"485
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 486: playNote(9,38);
+"486
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 487: Delay10KTCYx(17);;
+"487
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 488: stopNote(9,38);
+"488
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 489: stopNote(2,62);
+"489
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 491: playNote(9,38);
+"491
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 492: playNote(1,50);
+"492
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 493: playNote(2,69);
+"493
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 494: nr('e');
+"494
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 495: stopNote(2,69);
+"495
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 496: playNote(2,65);
+"496
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 497: nr('e');
+"497
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 498: stopNote(9,38);
+"498
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 499: stopNote(1,50);
+"499
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 500: stopNote(2,65);
+"500
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 502: playNote(9,38);
+"502
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 503: playNote(2,69);
+"503
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 504: Delay10KTCYx(17);;
+"504
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 505: stopNote(9,38);
+"505
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 506: playNote(9,38);
+"506
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 507: Delay10KTCYx(8);;
+"507
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 508: stopNote(2,69);
+"508
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 509: playNote(2,65);
+"509
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 510: Delay10KTCYx(8);;
+"510
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 511: stopNote(9,38);
+"511
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 512: playNote(9,38);
+"512
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 513: Delay10KTCYx(17);;
+"513
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 514: stopNote(9,38);
+"514
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 515: stopNote(2,65);
+"515
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 517: playNote(9,38);
+"517
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 518: playNote(1,45);
+"518
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 519: nr('q');
+"519
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 520: stopNote(9,38);
+"520
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 521: stopNote(1,45);
+"521
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 523: playNote(9,38);
+"523
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 524: nr('q');
+"524
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 525: stopNote(9,38);
+"525
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 528: setInstrument(2,73);
+"528
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 531: playNote(9,38);
+"531
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 532: playNote(1,41);
+"532
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 41 `i `uc ]
+[; ;oot_bank.c: 533: playNote(2,77);
+"533
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 534: nr('e');
+"534
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 535: stopNote(2,77);
+"535
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 536: playNote(2,74);
+"536
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 537: nr('e');
+"537
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 538: stopNote(9,38);
+"538
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 539: stopNote(1,41);
+"539
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 41 `i `uc ]
+[; ;oot_bank.c: 540: stopNote(2,74);
+"540
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 543: playNote(9,38);
+"543
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 544: playNote(2,77);
+"544
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 545: Delay10KTCYx(17);;
+"545
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 546: stopNote(9,38);
+"546
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 547: playNote(9,38);
+"547
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 548: Delay10KTCYx(8);;
+"548
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 549: stopNote(2,77);
+"549
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 550: playNote(2,74);
+"550
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 551: Delay10KTCYx(8);;
+"551
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 552: stopNote(9,38);
+"552
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 553: playNote(9,38);
+"553
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 554: Delay10KTCYx(17);;
+"554
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 555: stopNote(9,38);
+"555
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 556: stopNote(2,74);
+"556
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 558: playNote(9,38);
+"558
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 559: playNote(1,50);
+"559
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 560: playNote(2,81);
+"560
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 561: nr('e');
+"561
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 562: stopNote(2,81);
+"562
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 563: playNote(2,77);
+"563
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 564: nr('e');
+"564
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 565: stopNote(9,38);
+"565
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 566: stopNote(1,50);
+"566
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 567: stopNote(2,77);
+"567
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 569: playNote(9,38);
+"569
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 570: playNote(2,81);
+"570
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 571: Delay10KTCYx(17);;
+"571
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 572: stopNote(9,38);
+"572
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 573: playNote(9,38);
+"573
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 574: Delay10KTCYx(8);;
+"574
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 575: stopNote(2,81);
+"575
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 576: playNote(2,77);
+"576
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 577: Delay10KTCYx(8);;
+"577
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 578: stopNote(9,38);
+"578
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 579: playNote(9,38);
+"579
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 580: Delay10KTCYx(17);;
+"580
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 581: stopNote(9,38);
+"581
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 582: stopNote(2,77);
+"582
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 584: playNote(9,38);
+"584
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 585: playNote(1,45);
+"585
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 586: Delay10KTCYx(17);;
+"586
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 587: stopNote(9,38);
+"587
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 588: playNote(9,38);
+"588
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 589: Delay10KTCYx(17);;
+"589
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 590: stopNote(9,38);
+"590
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 591: playNote(9,38);
+"591
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 592: Delay10KTCYx(17);;
+"592
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 593: stopNote(9,38);
+"593
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 594: stopNote(1,45);
+"594
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 596: playNote(9,38);
+"596
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 597: Delay10KTCYx(17);
+"597
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 598: stopNote(9,38);
+"598
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 599: playNote(9,38);
+"599
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 600: Delay10KTCYx(17);
+"600
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 601: stopNote(9,38);
+"601
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 602: playNote(9,38);
+"602
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 603: Delay10KTCYx(17);
+"603
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 604: stopNote(9,38);
+"604
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 607: setInstrument(2,49);
+"607
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 49 `i `uc ]
+[; ;oot_bank.c: 610: playNote(9,38);
+"610
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 611: playNote(1,42);
+"611
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 42 `i `uc ]
+[; ;oot_bank.c: 612: playNote(2,67);
+"612
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 613: nr('e');
+"613
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 614: stopNote(2,67);
+"614
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 615: playNote(2,64);
+"615
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 616: nr('e');
+"616
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 617: stopNote(9,38);
+"617
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 618: stopNote(1,42);
+"618
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 42 `i `uc ]
+[; ;oot_bank.c: 619: stopNote(2,64);
+"619
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 622: playNote(9,38);
+"622
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 623: playNote(2,67);
+"623
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 624: Delay10KTCYx(17);;
+"624
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 625: stopNote(9,38);
+"625
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 626: playNote(9,38);
+"626
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 627: Delay10KTCYx(8);;
+"627
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 628: stopNote(2,67);
+"628
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 629: playNote(2,64);
+"629
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 630: Delay10KTCYx(8);;
+"630
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 631: stopNote(9,38);
+"631
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 632: playNote(9,38);
+"632
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 633: Delay10KTCYx(17);;
+"633
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 634: stopNote(9,38);
+"634
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 635: stopNote(2,64);
+"635
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 637: playNote(9,38);
+"637
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 638: playNote(1,52);
+"638
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 639: playNote(2,70);
+"639
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 640: nr('e');
+"640
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 641: stopNote(2,70);
+"641
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 642: playNote(2,67);
+"642
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 643: nr('e');
+"643
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 644: stopNote(9,38);
+"644
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 645: stopNote(1,52);
+"645
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 646: stopNote(2,67);
+"646
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 648: playNote(9,38);
+"648
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 649: playNote(2,70);
+"649
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 650: Delay10KTCYx(17);;
+"650
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 651: stopNote(9,38);
+"651
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 652: playNote(9,38);
+"652
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 653: Delay10KTCYx(8);;
+"653
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 654: stopNote(2,70);
+"654
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 70 `i `uc ]
+[; ;oot_bank.c: 655: playNote(2,67);
+"655
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 656: Delay10KTCYx(8);;
+"656
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 657: stopNote(9,38);
+"657
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 658: playNote(9,38);
+"658
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 659: Delay10KTCYx(17);;
+"659
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 660: stopNote(9,38);
+"660
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 661: stopNote(2,67);
+"661
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 67 `i `uc ]
+[; ;oot_bank.c: 663: playNote(9,38);
+"663
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 664: playNote(1,46);
+"664
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 665: nr('q');
+"665
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 666: stopNote(9,38);
+"666
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 667: stopNote(1,46);
+"667
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 669: playNote(9,38);
+"669
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 670: nr('q');
+"670
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 671: stopNote(9,38);
+"671
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 675: playNote(9,38);
+"675
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 676: playNote(1,41);
+"676
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 41 `i `uc ]
+[; ;oot_bank.c: 677: playNote(2,69);
+"677
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 678: nr('e');
+"678
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 679: stopNote(2,69);
+"679
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 680: playNote(2,65);
+"680
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 681: nr('e');
+"681
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 682: stopNote(9,38);
+"682
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 683: stopNote(1,41);
+"683
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 41 `i `uc ]
+[; ;oot_bank.c: 684: stopNote(2,65);
+"684
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 687: playNote(9,38);
+"687
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 688: playNote(2,69);
+"688
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 689: Delay10KTCYx(17);;
+"689
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 690: stopNote(9,38);
+"690
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 691: playNote(9,38);
+"691
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 692: Delay10KTCYx(8);;
+"692
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 693: stopNote(2,69);
+"693
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 694: playNote(2,65);
+"694
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 695: Delay10KTCYx(8);;
+"695
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 696: stopNote(9,38);
+"696
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 697: playNote(9,38);
+"697
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 698: Delay10KTCYx(17);;
+"698
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 699: stopNote(9,38);
+"699
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 700: stopNote(2,65);
+"700
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 702: playNote(9,38);
+"702
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 703: playNote(1,50);
+"703
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 704: playNote(2,74);
+"704
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 705: nr('e');
+"705
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 706: stopNote(2,74);
+"706
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 707: playNote(2,69);
+"707
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 708: nr('e');
+"708
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 709: stopNote(9,38);
+"709
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 710: stopNote(1,50);
+"710
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 711: stopNote(2,69);
+"711
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 713: playNote(9,38);
+"713
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 714: playNote(2,74);
+"714
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 715: Delay10KTCYx(17);;
+"715
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 716: stopNote(9,38);
+"716
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 717: playNote(9,38);
+"717
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 718: Delay10KTCYx(8);;
+"718
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 719: stopNote(2,74);
+"719
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 720: playNote(2,69);
+"720
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 721: Delay10KTCYx(8);;
+"721
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 722: stopNote(9,38);
+"722
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 723: playNote(9,38);
+"723
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 724: Delay10KTCYx(17);;
+"724
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 725: stopNote(9,38);
+"725
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 726: stopNote(2,69);
+"726
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 728: playNote(9,38);
+"728
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 729: playNote(1,45);
+"729
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 730: playNote(2,77);
+"730
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 731: Delay10KTCYx(17);;
+"731
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 732: stopNote(9,38);
+"732
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 733: playNote(9,38);
+"733
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 734: Delay10KTCYx(8);;
+"734
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 735: stopNote(2,77);
+"735
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 736: playNote(2,74);
+"736
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 737: Delay10KTCYx(8);;
+"737
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 738: stopNote(9,38);
+"738
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 739: playNote(9,38);
+"739
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 740: Delay10KTCYx(17);;
+"740
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 741: stopNote(9,38);
+"741
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 742: stopNote(1,45);
+"742
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 743: stopNote(2,74);
+"743
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 745: playNote(9,38);
+"745
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 746: playNote(2,77);
+"746
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 747: Delay10KTCYx(17);;
+"747
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 748: stopNote(9,38);
+"748
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 749: playNote(9,38);
+"749
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 750: Delay10KTCYx(8);;
+"750
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 751: stopNote(2,77);
+"751
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 752: playNote(2,74);
+"752
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 753: Delay10KTCYx(8);;
+"753
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 754: stopNote(9,38);
+"754
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 755: playNote(9,38);
+"755
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 756: Delay10KTCYx(17);;
+"756
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 757: stopNote(9,38);
+"757
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 758: stopNote(2,74);
+"758
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 762: playNote(9,38);
+"762
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 763: playNote(1,40);
+"763
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 40 `i `uc ]
+[; ;oot_bank.c: 764: playNote(2,81);
+"764
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 765: nr('e');
+"765
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 766: stopNote(2,81);
+"766
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 767: playNote(2,76);
+"767
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 768: nr('e');
+"768
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 769: stopNote(9,38);
+"769
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 770: stopNote(1,40);
+"770
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 40 `i `uc ]
+[; ;oot_bank.c: 771: stopNote(2,76);
+"771
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 774: playNote(9,38);
+"774
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 775: playNote(2,81);
+"775
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 776: Delay10KTCYx(17);;
+"776
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 777: stopNote(9,38);
+"777
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 778: playNote(9,38);
+"778
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 779: Delay10KTCYx(8);;
+"779
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 780: stopNote(2,81);
+"780
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 781: playNote(2,76);
+"781
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 782: Delay10KTCYx(8);;
+"782
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 783: stopNote(9,38);
+"783
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 784: playNote(9,38);
+"784
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 785: Delay10KTCYx(17);;
+"785
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 786: stopNote(9,38);
+"786
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 787: stopNote(2,76);
+"787
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 789: playNote(9,38);
+"789
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 790: playNote(1,52);
+"790
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 791: playNote(2,79);
+"791
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 792: nr('e');
+"792
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 793: stopNote(2,79);
+"793
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 794: playNote(2,73);
+"794
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 795: nr('e');
+"795
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 796: stopNote(9,38);
+"796
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 797: stopNote(1,52);
+"797
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 798: stopNote(2,73);
+"798
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 800: playNote(9,38);
+"800
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 801: playNote(2,79);
+"801
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 802: Delay10KTCYx(17);;
+"802
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 803: stopNote(9,38);
+"803
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 804: playNote(9,38);
+"804
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 805: Delay10KTCYx(8);;
+"805
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 806: stopNote(2,79);
+"806
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 79 `i `uc ]
+[; ;oot_bank.c: 807: playNote(2,73);
+"807
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 808: Delay10KTCYx(8);;
+"808
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 809: stopNote(9,38);
+"809
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 810: playNote(9,38);
+"810
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 811: Delay10KTCYx(17);;
+"811
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 812: stopNote(9,38);
+"812
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 813: stopNote(2,73);
+"813
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 815: playNote(9,38);
+"815
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 816: playNote(1,45);
+"816
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 817: playNote(2,77);
+"817
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 818: Delay10KTCYx(17);;
+"818
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 819: stopNote(9,38);
+"819
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 820: playNote(9,38);
+"820
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 821: Delay10KTCYx(8);;
+"821
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 822: stopNote(2,77);
+"822
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 77 `i `uc ]
+[; ;oot_bank.c: 823: playNote(2,74);
+"823
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 824: Delay10KTCYx(8);;
+"824
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 825: stopNote(9,38);
+"825
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 826: playNote(9,38);
+"826
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 827: Delay10KTCYx(17);;
+"827
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 828: stopNote(9,38);
+"828
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 829: stopNote(1,45);
+"829
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 45 `i `uc ]
+[; ;oot_bank.c: 830: stopNote(2,74);
+"830
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 832: playNote(9,38);
+"832
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 833: playNote(2,69);
+"833
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 834: Delay10KTCYx(17);;
+"834
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 835: stopNote(9,38);
+"835
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 836: playNote(9,38);
+"836
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 837: Delay10KTCYx(8);;
+"837
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 838: stopNote(2,69);
+"838
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 839: playNote(2,65);
+"839
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 840: Delay10KTCYx(8);;
+"840
+[e ( _Delay10KTCYx (1 -> -> 8 `i `uc ]
+[; ;oot_bank.c: 841: stopNote(9,38);
+"841
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 842: playNote(9,38);
+"842
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 843: Delay10KTCYx(17);;
+"843
+[e ( _Delay10KTCYx (1 -> -> 17 `i `uc ]
+[; ;oot_bank.c: 844: stopNote(9,38);
+"844
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 845: stopNote(2,65);
+"845
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 65 `i `uc ]
+[; ;oot_bank.c: 849: playNote(9,38);
+"849
+[e ( _playNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 850: playNote(1,38);
+"850
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 851: playNote(2,62);
+"851
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 852: nr('w');
+"852
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 853: stopNote(9,38);
+"853
+[e ( _stopNote (2 , -> -> 9 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 854: stopNote(1,38);
+"854
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 38 `i `uc ]
+[; ;oot_bank.c: 855: stopNote(2,62);
+"855
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 863: }
+"863
+[e :UE 3 ]
+}
+"866
+[v _prelude `(v ~T0 @X0 1 ef ]
+{
+[; ;oot_bank.c: 865: void prelude(void)
+[; ;oot_bank.c: 866: {
+[e :U _prelude ]
+[f ]
+[; ;oot_bank.c: 867: setInstrument(0,48);
+"867
+[e ( _setInstrument (2 , -> -> 0 `i `uc -> -> 48 `i `uc ]
+[; ;oot_bank.c: 868: setInstrument(1,48);
+"868
+[e ( _setInstrument (2 , -> -> 1 `i `uc -> -> 48 `i `uc ]
+[; ;oot_bank.c: 869: setInstrument(2,46);
+"869
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 870: setTempo(110);
+"870
+[e ( _setTempo (1 -> -> 110 `i `f ]
+[; ;oot_bank.c: 872: playNote(0,57);
+"872
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 873: playNote(1,62);
+"873
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 874: playNote(2,86);
+"874
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 875: nr('e');
+"875
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 876: stopNote(2,86);
+"876
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 877: playNote(2,81);
+"877
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 878: nr('e');
+"878
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 879: nr('q');
+"879
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 880: stopNote(2,81);
+"880
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 881: playNote(2,86);
+"881
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 882: nr('e');
+"882
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 883: stopNote(2,86);
+"883
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 884: playNote(2,81);
+"884
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 885: nr('e');
+"885
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 886: stopNote(2,81);
+"886
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 887: playNote(2,83);
+"887
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 888: nr('e');
+"888
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 889: stopNote(2,83);
+"889
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 890: playNote(2,86);
+"890
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 891: nr('e');
+"891
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 892: stopNote(0,57);
+"892
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 893: stopNote(1,62);
+"893
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 895: playNote(0,59);
+"895
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 896: playNote(1,62);
+"896
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 897: nr('w');
+"897
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 898: stopNote(0,59);
+"898
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 899: stopNote(1,62);
+"899
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 900: stopNote(2,86);
+"900
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 902: setInstrument(2,73);
+"902
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 904: playNote(0,57);
+"904
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 905: playNote(1,62);
+"905
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 906: playNote(2,86);
+"906
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 907: nr('e');
+"907
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 908: stopNote(2,86);
+"908
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 909: playNote(2,81);
+"909
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 910: nr('e');
+"910
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 911: nr('q');
+"911
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 912: stopNote(2,81);
+"912
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 913: playNote(2,86);
+"913
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 914: nr('e');
+"914
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 915: stopNote(2,86);
+"915
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 916: playNote(2,81);
+"916
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 917: nr('e');
+"917
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 918: stopNote(2,81);
+"918
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 919: playNote(2,83);
+"919
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 920: nr('e');
+"920
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 921: stopNote(2,83);
+"921
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 922: playNote(2,86);
+"922
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 923: nr('e');
+"923
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 924: stopNote(0,57);
+"924
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 925: stopNote(1,62);
+"925
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 927: playNote(0,59);
+"927
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 928: playNote(1,62);
+"928
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 929: nr('w');
+"929
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 930: stopNote(0,59);
+"930
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 931: stopNote(1,62);
+"931
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 932: stopNote(2,86);
+"932
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 934: setInstrument(2,46);
+"934
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 936: playNote(0,62);
+"936
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 937: playNote(1,62);
+"937
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 938: playNote(2,81);
+"938
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 939: nr('e');
+"939
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 940: stopNote(2,81);
+"940
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 941: playNote(2,76);
+"941
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 942: nr('e');
+"942
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 943: nr('q');
+"943
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 944: stopNote(2,76);
+"944
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 945: playNote(2,81);
+"945
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 946: nr('e');
+"946
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 947: stopNote(2,81);
+"947
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 948: playNote(2,76);
+"948
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 949: nr('e');
+"949
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 950: stopNote(2,76);
+"950
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 951: playNote(2,78);
+"951
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 952: nr('e');
+"952
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 953: stopNote(2,78);
+"953
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 954: playNote(2,69);
+"954
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 955: nr('e');
+"955
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 956: stopNote(0,62);
+"956
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 957: stopNote(1,62);
+"957
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 959: playNote(0,61);
+"959
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 960: playNote(1,61);
+"960
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 961: nr('w');
+"961
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 962: stopNote(0,61);
+"962
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 963: stopNote(1,61);
+"963
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 964: stopNote(2,69);
+"964
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 966: setInstrument(2,73);
+"966
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 968: playNote(0,62);
+"968
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 969: playNote(1,64);
+"969
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 970: playNote(2,81);
+"970
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 971: nr('e');
+"971
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 972: stopNote(2,81);
+"972
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 973: playNote(2,76);
+"973
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 974: nr('e');
+"974
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 975: nr('q');
+"975
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 976: stopNote(2,76);
+"976
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 977: playNote(2,81);
+"977
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 978: nr('e');
+"978
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 979: stopNote(2,81);
+"979
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 980: playNote(2,76);
+"980
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 981: nr('e');
+"981
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 982: stopNote(2,76);
+"982
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 76 `i `uc ]
+[; ;oot_bank.c: 983: playNote(2,78);
+"983
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 984: nr('e');
+"984
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 985: stopNote(2,78);
+"985
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 986: playNote(2,81);
+"986
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 987: nr('e');
+"987
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 988: stopNote(0,62);
+"988
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 989: stopNote(1,64);
+"989
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 64 `i `uc ]
+[; ;oot_bank.c: 991: playNote(0,61);
+"991
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 992: playNote(1,61);
+"992
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 993: nr('w');
+"993
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 994: stopNote(0,61);
+"994
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 995: stopNote(1,61);
+"995
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 996: stopNote(2,81);
+"996
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 998: setInstrument(2,46);
+"998
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 1000: playNote(0,57);
+"1000
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 1001: playNote(1,62);
+"1001
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1002: playNote(2,86);
+"1002
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1003: nr('e');
+"1003
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1004: stopNote(2,86);
+"1004
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1005: playNote(2,81);
+"1005
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1006: nr('e');
+"1006
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1007: nr('q');
+"1007
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 1008: stopNote(2,81);
+"1008
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1009: playNote(2,86);
+"1009
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1010: nr('e');
+"1010
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1011: stopNote(2,86);
+"1011
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1012: playNote(2,81);
+"1012
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1013: nr('e');
+"1013
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1014: stopNote(2,81);
+"1014
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1015: playNote(2,83);
+"1015
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 1016: nr('e');
+"1016
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1017: stopNote(2,83);
+"1017
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 1018: playNote(2,86);
+"1018
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1019: nr('e');
+"1019
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1020: stopNote(0,57);
+"1020
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 1021: stopNote(1,62);
+"1021
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1023: playNote(0,59);
+"1023
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 1024: playNote(1,62);
+"1024
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1025: nr('w');
+"1025
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 1026: stopNote(0,59);
+"1026
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 1027: stopNote(1,62);
+"1027
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1028: stopNote(2,86);
+"1028
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1030: setInstrument(2,73);
+"1030
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 73 `i `uc ]
+[; ;oot_bank.c: 1032: playNote(0,57);
+"1032
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 1033: playNote(1,62);
+"1033
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1034: playNote(2,86);
+"1034
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1035: nr('e');
+"1035
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1036: stopNote(2,86);
+"1036
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1037: playNote(2,81);
+"1037
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1038: nr('e');
+"1038
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1039: nr('q');
+"1039
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 1040: stopNote(2,81);
+"1040
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1041: playNote(2,86);
+"1041
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1042: nr('e');
+"1042
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1043: stopNote(2,86);
+"1043
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1044: playNote(2,81);
+"1044
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1045: nr('e');
+"1045
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1046: stopNote(2,81);
+"1046
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1047: playNote(2,83);
+"1047
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 1048: nr('e');
+"1048
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1049: stopNote(2,83);
+"1049
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 83 `i `uc ]
+[; ;oot_bank.c: 1050: playNote(2,86);
+"1050
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1051: nr('e');
+"1051
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1052: stopNote(0,57);
+"1052
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 1053: stopNote(1,62);
+"1053
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1055: playNote(0,59);
+"1055
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 1056: playNote(1,62);
+"1056
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1057: nr('w');
+"1057
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 1058: stopNote(0,59);
+"1058
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 59 `i `uc ]
+[; ;oot_bank.c: 1059: stopNote(1,62);
+"1059
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1060: stopNote(2,86);
+"1060
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1062: setInstrument(2,46);
+"1062
+[e ( _setInstrument (2 , -> -> 2 `i `uc -> -> 46 `i `uc ]
+[; ;oot_bank.c: 1064: playNote(0,52);
+"1064
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 1065: playNote(1,62);
+"1065
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1066: nr('w');
+"1066
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 1067: stopNote(0,52);
+"1067
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 52 `i `uc ]
+[; ;oot_bank.c: 1068: stopNote(1,62);
+"1068
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1070: playNote(0,51);
+"1070
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 51 `i `uc ]
+[; ;oot_bank.c: 1071: playNote(1,62);
+"1071
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1072: nr('w');
+"1072
+[e ( _nr (1 -> -> 119 `ui `uc ]
+[; ;oot_bank.c: 1073: stopNote(0,51);
+"1073
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 51 `i `uc ]
+[; ;oot_bank.c: 1074: stopNote(1,62);
+"1074
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1076: playNote(0,50);
+"1076
+[e ( _playNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 1077: playNote(1,61);
+"1077
+[e ( _playNote (2 , -> -> 1 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 1078: playNote(2,50);
+"1078
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 1079: nr('e');
+"1079
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1080: stopNote(2,50);
+"1080
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 1081: playNote(2,54);
+"1081
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 54 `i `uc ]
+[; ;oot_bank.c: 1082: nr('e');
+"1082
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1083: stopNote(2,54);
+"1083
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 54 `i `uc ]
+[; ;oot_bank.c: 1084: playNote(2,57);
+"1084
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 1085: nr('e');
+"1085
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1086: stopNote(2,57);
+"1086
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 57 `i `uc ]
+[; ;oot_bank.c: 1087: playNote(2,62);
+"1087
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1088: nr('e');
+"1088
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1089: stopNote(2,62);
+"1089
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 62 `i `uc ]
+[; ;oot_bank.c: 1090: playNote(2,66);
+"1090
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 66 `i `uc ]
+[; ;oot_bank.c: 1091: nr('e');
+"1091
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1092: stopNote(2,66);
+"1092
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 66 `i `uc ]
+[; ;oot_bank.c: 1093: playNote(2,69);
+"1093
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 1094: nr('e');
+"1094
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1095: stopNote(2,69);
+"1095
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 69 `i `uc ]
+[; ;oot_bank.c: 1096: playNote(2,74);
+"1096
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 1097: nr('e');
+"1097
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1098: stopNote(2,74);
+"1098
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 74 `i `uc ]
+[; ;oot_bank.c: 1099: playNote(2,78);
+"1099
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 1100: nr('e');
+"1100
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1101: stopNote(2,78);
+"1101
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 78 `i `uc ]
+[; ;oot_bank.c: 1102: playNote(2,81);
+"1102
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1103: nr('e');
+"1103
+[e ( _nr (1 -> -> 101 `ui `uc ]
+[; ;oot_bank.c: 1104: stopNote(2,81);
+"1104
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 81 `i `uc ]
+[; ;oot_bank.c: 1105: playNote(2,85);
+"1105
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 85 `i `uc ]
+[; ;oot_bank.c: 1106: nr('q');
+"1106
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 1107: stopNote(2,85);
+"1107
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 85 `i `uc ]
+[; ;oot_bank.c: 1108: playNote(2,86);
+"1108
+[e ( _playNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1109: nr('q');
+"1109
+[e ( _nr (1 -> -> 113 `ui `uc ]
+[; ;oot_bank.c: 1110: stopNote(2,86);
+"1110
+[e ( _stopNote (2 , -> -> 2 `i `uc -> -> 86 `i `uc ]
+[; ;oot_bank.c: 1111: stopNote(0,50);
+"1111
+[e ( _stopNote (2 , -> -> 0 `i `uc -> -> 50 `i `uc ]
+[; ;oot_bank.c: 1112: stopNote(1,61);
+"1112
+[e ( _stopNote (2 , -> -> 1 `i `uc -> -> 61 `i `uc ]
+[; ;oot_bank.c: 1114: }
+"1114
+[e :UE 4 ]
+}
