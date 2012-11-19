@@ -1,0 +1,89 @@
+Partlist exported from /Users/Allen/Documents/eagle/collatz_box/collatz_box.sch at 2012-10-28 8:23 PM
+
+Assembly variant: 
+
+Part   Value           Device           Package            Description                                                                        
+5C1    10u             CAP1206          1206               Capacitor                                                                          
+5C2    0.1u            CAP0805          0805               Capacitor                                                                          
+18C1   10u             CAP1206          1206               Capacitor                                                                          
+18C2   .1u             CAP0805          0805               Capacitor                                                                          
+18C3   0.1u            CAP0805          0805               Capacitor                                                                          
+33C1   10u             CAP1206          1206               Capacitor                                                                          
+33C2   0.1u            CAP0805          0805               Capacitor                                                                          
+33C3   0.1u            CAP0805          0805               Capacitor                                                                          
+33C4   0.1u            CAP0805          0805               Capacitor                                                                          
+33C5   0.1u            CAP0805          0805               Capacitor                                                                          
+33CBYP 470p            CAP0805          0805               Capacitor                                                                          
+ADC                    3RP/1610N        3RP/1610N          16mm Potentiometer one level                                                       
+AMP    LM386M-1        LM386M-1         SO08               Low Voltage Audio Power Amplifier                                                  
+C1     0.1u            CAP0805          0805               Capacitor                                                                          
+C2     0.1u            CAP0805          0805               Capacitor                                                                          
+C3     10u             CAP1206          1206               Capacitor                                                                          
+C4     22p             CAP0805          0805               Capacitor                                                                          
+C5     22p             CAP0805          0805               Capacitor                                                                          
+C6     1u              CAP0805          0805               Capacitor                                                                          
+C7     10n             CAP0805          0805               Capacitor                                                                          
+C8     1u              CAP0805          0805               Capacitor                                                                          
+C9     0.047u          CAP0805          0805               Capacitor                                                                          
+C10    1u              CAP0805          0805               Capacitor                                                                          
+C11    10u             CAP0805          0805               Capacitor                                                                          
+C12    100n            CAP0805          0805               Capacitor                                                                          
+C14    100n            CAP0805          0805               Capacitor                                                                          
+CHG                    JP1Q             JP1                JUMPER                                                                             
+I1                     LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I1K                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I2                     LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I2K                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I4                     LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I4K                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I8                     LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I8K                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I16                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I16K                   LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I32                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I32K                   LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I64                    LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I128                   LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I256                   LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+I512                   LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+ICSP   AVR_SPI_PRG_6NS AVR_SPI_PRG_6NS  2X3-NS             AVR ISP 6 Pin                                                                      
+JP1    FTDI_BASICPTH   FTDI_BASICPTH    FTDI_BASIC         FTDI Basic header with labels                                                      
+JP2    STAND-OFF       STAND-OFF        STAND-OFF          #4 Stand Off                                                                       
+JP3    STAND-OFF       STAND-OFF        STAND-OFF          #4 Stand Off                                                                       
+JP4    STAND-OFF       STAND-OFF        STAND-OFF          #4 Stand Off                                                                       
+JP5    STAND-OFF       STAND-OFF        STAND-OFF          #4 Stand Off                                                                       
+PWLED                  LEDCHIPLED_1206  CHIPLED_1206       LED                                                                                
+PWR                    JP1Q             JP1                JUMPER                                                                             
+R1     1k              RESISTOR0805-RES 0805               Resistor                                                                           
+R2     100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R3     100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R4     10k             RESISTOR0805-RES 0805               Resistor                                                                           
+R5     100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R6     100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R7     22k             RESISTOR0805-RES 0805               Resistor                                                                           
+R8     1M              RESISTOR0805-RES 0805               Resistor                                                                           
+R9     100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R10    100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R11    100             RESISTOR0805-RES 0805               Resistor                                                                           
+R12    10k             RESISTOR0805-RES 0805               Resistor                                                                           
+R13    100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R14    1k              RESISTOR0805-RES 0805               Resistor                                                                           
+R15    100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R17    100k            RESISTOR0805-RES 0805               Resistor                                                                           
+R21    20              RESISTOR0805-RES 0805               Resistor                                                                           
+R22    10              RESISTOR0805-RES 0805               Resistor                                                                           
+R23    100             RESISTOR0805-RES 0805               Resistor                                                                           
+REG5   V_REG_LDOSMD    V_REG_LDOSMD     SOT23-5            Voltage Regulator LDO                                                              
+REG18  V_REG_LDOSMD    V_REG_LDOSMD     SOT23-5            Voltage Regulator LDO                                                              
+REG33  V_REG_LDOSMD    V_REG_LDOSMD     SOT23-5            Voltage Regulator LDO                                                              
+R_EXT                  RESISTORPTH-1/4W AXIAL-0.4          Resistor                                                                           
+S1                     TAC_SWITCHSMD    TACTILE_SWITCH_SMD Momentary Switch                                                                   
+S4                     SWITCH-SPDTPTH   SWITCH-SPDT        SPST Switch                                                                        
+SPKR                   JP1Q             JP1                JUMPER                                                                             
+START                  JP1Q             JP1                JUMPER                                                                             
+TR                     TRIM_US-3223W    3223W              POTENTIOMETER                                                                      
+U4     ATMEGA328       ATMEGA168        TQFP32-08          Atmel 32-pin 8-bit micro, 16k flash.                                               
+U5     VS1033          VS1033           LQFP-48            MP3 codec                                                                          
+U6     TLC5925_PW_24   TLC5925_PW_24    PW24                                                                                                  
+Y1     12.288MHz       CRYSTAL5X3       CRYSTAL-SMD-5X3    Various standard crystals. Proven footprints. Spark Fun Electronics SKU : COM-00534
+Y2     RESONATORSMD    RESONATORSMD     RESONATOR-SMD      Resonator                                                                          

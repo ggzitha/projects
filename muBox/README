@@ -1,0 +1,16 @@
+These are the files for the muBox project
+http://meoworkshop.org/projects/mubox
+
+
+
+Arduino code is stored in "muBox_programs"
+
+
+Eagle files are stored in "muBox_eagle_files"
+
+Note that the names for the eagle files are not "muBox" instead, it is "collatz_box."
+This is what I called the project before I thought of muBox.
+
+You will need the Sparkfun Eagle library in order to view the schematic and board properly. 
+If you don't have the library, you will most likely get an error message.
+
