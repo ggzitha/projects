@@ -52,10 +52,24 @@ int setupUART(){
 
     U1MODEbits.UARTEN = 0;
     U1STAbits.UTXEN = 0;
+
+    U1MODEbits.USIDL = 0;
+    U1MODEbits.IREN = 0;
     U1MODEbits.RTSMD = 1;
+    U1MODEbits.UEN = 0b00;
+    U1MODEbits.WAKE = 0;
+    U1MODEbits.LPBACK = 0;
+    U1MODEbits.ABAUD = 0;
+    U1MODEbits.URXINV = 0;
     U1MODEbits.BRGH = 0;            //  Enable low speed mode
+    U1MODEbits.PDSEL = 0b00;
+    U1MODEbits.STSEL = 0;
+
     U1STAbits.UTXISEL1 = 0;         //  Interrupt triggered after every transmission of character
     U1STAbits.UTXISEL0 = 0;
+    U1STAbits.UTXINV = 0;
+    U1STAbits.UTXBRK = 0;
+    
 
     U1BRG = BRGVAL;
 
