@@ -65,7 +65,7 @@ int setupUART(){
     U1MODEbits.PDSEL = 0b00;
     U1MODEbits.STSEL = 0;
 
-    U1STAbits.UTXISEL1 = 0;         //  Interrupt triggered after every transmission of character
+    U1STAbits.UTXISEL1 = 0;         
     U1STAbits.UTXISEL0 = 0;
     U1STAbits.UTXINV = 0;
     U1STAbits.UTXBRK = 0;
@@ -73,7 +73,7 @@ int setupUART(){
 
     U1BRG = BRGVAL;
 
-    IFS0bits.U1TXIF = 0;            // Clear UART interrupt flag
+   // IFS0bits.U1TXIF = 0;            // Clear UART interrupt flag
     IEC0bits.U1TXIE = 1;            // Enable UART interrupts
 
     RPOR7bits.RP15R = 0b000011;     //  Set UART TX Pin to RP15

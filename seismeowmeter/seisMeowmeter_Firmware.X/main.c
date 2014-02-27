@@ -16,20 +16,19 @@ _FOSCSEL( FNOSC_PRI & IESO_OFF );
 _FWDT( FWDTEN_OFF );
 
 
-//_FOSC( OSC)
-
-
 int i = 0;
-int k = 0;
 
 int main(int argc, char** argv) {
 
-    //OSCCONbits.COSC = 0b010;    //  HSXT no PLL
+    OSCCONbits.COSC = 0b010;    //  HSXT no PLL
+    OSCCONbits.CLKLOCK = 1;
+    OSCCONbits.IOLOCK = 1;
+
+    CLKDIVbits.ROI = 0;
+    CLKDIVbits.DOZE = 0b000;
+    CLKDIVbits.DOZEN = 1;
 
     setupUART();
-    for( i = 0; i < 10000000; i++ );
-
-    U1TXREG = 'a';
 
     while(1);
 
@@ -40,6 +39,6 @@ int main(int argc, char** argv) {
 void __attribute__(( __interrupt__, __auto_psv__ )) _U1TXInterrupt( void ){
 
     IFS0bits.U1TXIF = 0;        // Clear interrupt flag
-    U1TXREG = 'a';
+    U1TXREG = 'b';
 }
 
