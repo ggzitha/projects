@@ -30,15 +30,18 @@ int main(int argc, char** argv) {
 
     setupUART();
 
-    while(1);
+    while(1){
+
+    }
 
 
     return (EXIT_SUCCESS);
 }
 
 void __attribute__(( __interrupt__, __auto_psv__ )) _U1TXInterrupt( void ){
-
+    int i = 0;
     IFS0bits.U1TXIF = 0;        // Clear interrupt flag
+    for(i=0; i < 1000; i++);
     U1TXREG = 'b';
 }
 
