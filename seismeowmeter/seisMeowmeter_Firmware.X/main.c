@@ -15,8 +15,7 @@ _FOSC( POSCMD_HS & OSCIOFNC_OFF );
 _FOSCSEL( FNOSC_PRI & IESO_OFF );
 _FWDT( FWDTEN_OFF );
 
-
-int i = 0;
+ringBuf_t uBuf;
 
 int main(int argc, char** argv) {
 
@@ -28,6 +27,10 @@ int main(int argc, char** argv) {
     CLKDIVbits.DOZE = 0b000;
     CLKDIVbits.DOZEN = 1;
 
+    int i = 0;
+    char *test = "Will the circle be unbroken by and by, by and by?\n";
+
+    initUBuffer( uBuf );
     setupUART();
 
     while(1){
@@ -38,10 +41,42 @@ int main(int argc, char** argv) {
     return (EXIT_SUCCESS);
 }
 
+//  UART ISR
 void __attribute__(( __interrupt__, __auto_psv__ )) _U1TXInterrupt( void ){
-    int i = 0;
-    IFS0bits.U1TXIF = 0;        // Clear interrupt flag
-    for(i=0; i < 1000; i++);
-    U1TXREG = 'b';
+
+    if( uBuf.bufEmpty == 1 ){ /* Nothing to do here*/ }
+
+    else{
+
+        IFS0bits.U1TXIF = 0;
+
+        U1TXREG = *( uBuf.bufIndex );       //  Should this belong here???
+        uBuf.freeEndPtr = uBuf.bufIndex;
+
+        //  Recalculate free space
+        //  There are three cases: start pointer > end pointer, the other way around and them being equal
+        if( uBuf.freeStartPtr > uBuf.freeEndPtr ){ 
+            uBuf.freeSpace = ( BUFSIZE - (int)uBuf.freeStartPtr ) - ( uBuf.freeEndPtr - uBuf.bufPtr );
+        }
+
+        else if( uBuf.freeStartPtr < uBuf.freeEndPtr ){
+            uBuf.freeSpace = ( uBuf.freeEndPtr - uBuf.freeStartPtr ) + 1;
+        }
+
+        //  If freeStartPtr = freeEndPtr, this means there is one byte of free space
+        //  The ISR guarantees at least one free byte of space
+        else{
+            uBuf.freeSpace = 1;
+        }
+
+        uBuf.bufIndex++;
+
+
+        //  If index exceeds the size of the buffer, reset it back to the start...because, you know...circle.
+        if( uBuf.bufIndex >= ( uBuf.bufPtr + BUFSIZE )){ uBuf.bufIndex = uBuf.bufPtr; }
+        //  If the index arrives at the start of free space, our buffer is empty
+        if( uBuf.bufIndex == uBuf.freeStartPtr ){ uBuf.bufEmpty = 1; }
+
+    }
 }
 

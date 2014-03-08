@@ -84,3 +84,73 @@ int setupUART(){
     return 0;
 
 }
+
+int initUBuffer( ringBuf_t uBuf ){
+
+    uBuf.bufPtr = uBuf.buffer;
+    uBuf.bufIndex = uBuf.bufPtr;
+    uBuf.freeStartPtr = uBuf.bufPtr;
+    uBuf.freeEndPtr = uBuf.bufPtr;
+    uBuf.freeSpace = BUFSIZE;
+    uBuf.bufEmpty = 1;
+
+    return 0;
+
+}
+
+int addStrToBuffer( ringBuf_t uBuf, char *data ){
+
+    int arraySize = sizeof( data ) / sizeof( data[0] );
+    int i = 0;
+    
+    //  Kick out of function if no space is available in the buffah
+    if( arraySize > uBuf.freeSpace ) { return -1; }
+
+    else if( arraySize <= uBuf.freeSpace ){
+
+        char temp = *data;
+        char *tempFreeStartPtr = uBuf.freeStartPtr;
+
+        //  All strings end with a null (\0) character so this is how we'll know when to stop adding data to the buffer
+        while(temp != '\0'){
+            //  Add one character to the first empty slot
+            *(uBuf.freeStartPtr) = *(data + i );
+            uBuf.freeStartPtr++;
+            uBuf.freeSpace--;
+
+            if( uBuf.freeStartPtr > ( uBuf.bufPtr + BUFSIZE )) { uBuf.freeStartPtr = uBuf.bufPtr; }
+            i++;
+
+        }
+
+        //  If buffer is empty then start the UART transmission again by adding data to the UART buffer
+        if( uBuf.bufEmpty == 1 ){
+            U1TXREG = *(tempFreeStartPtr);
+        }
+
+        return 0;
+    }
+
+}
+
+int addNumToBuffer( ringBuf_t uBuf, unsigned long int data ){
+
+    int i = 0;
+
+    char buf[8 * sizeof(long) + 1];
+    char * str = &buf[sizeof(buf) - 1];
+
+    *str = '\0';
+
+    do{
+        unsigned long m = data;
+        data /= 10;
+        char c = m - (10 * data);
+
+        *(--str) = c + 48;      //  Offset by 48 to convert from straight numbers to ascii numbers
+    }while(data);
+
+    addStrToBuffer( uBuf, buf );
+
+    return 0;
+}
