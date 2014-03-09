@@ -15,9 +15,19 @@ _FOSC( POSCMD_HS & OSCIOFNC_OFF );
 _FOSCSEL( FNOSC_PRI & IESO_OFF );
 _FWDT( FWDTEN_OFF );
 
-ringBuf_t uBuf;
+volatile ringBuf_t uTBuf;
 
 int main(int argc, char** argv) {
+
+    uTBuf.bufPtr = uTBuf.buffer;
+    uTBuf.bufIndex = uTBuf.bufPtr;
+    uTBuf.freeStartPtr = uTBuf.bufPtr;
+    uTBuf.freeSpace = BUFSIZE;
+    uTBuf.bufEmpty = 1;
+    uTBuf.bufFull = 0;
+
+    ringBuf_t *ptr = &uTBuf;
+
 
     OSCCONbits.COSC = 0b010;    //  HSXT no PLL
     OSCCONbits.CLKLOCK = 1;
@@ -28,13 +38,15 @@ int main(int argc, char** argv) {
     CLKDIVbits.DOZEN = 1;
 
     int i = 0;
-    char *test = "Will the circle be unbroken by and by, by and by?\n";
+    char *test = "will the circle be unbroken by and by, by and by?";
 
-    initUBuffer( uBuf );
     setupUART();
+    addStrToBuffer( ptr, test );
 
     while(1){
-
+        //
+        for(i = 0; i < 1000; i++ );
+        addStrToBuffer( ptr, test );
     }
 
 
@@ -43,39 +55,79 @@ int main(int argc, char** argv) {
 
 //  UART ISR
 void __attribute__(( __interrupt__, __auto_psv__ )) _U1TXInterrupt( void ){
-
-    if( uBuf.bufEmpty == 1 ){ /* Nothing to do here*/ }
-
-    else{
-
+    
+/*
+    if( uTBuf->bufEmpty == 1 ){
         IFS0bits.U1TXIF = 0;
+    }
 
-        U1TXREG = *( uBuf.bufIndex );       //  Should this belong here???
-        uBuf.freeEndPtr = uBuf.bufIndex;
+    else if( uTBuf->bufEmpty == 0 ){
+
+        U1TXREG = *( uTBuf->bufIndex );       //  Should this belong here???
+        uTBuf->bufIndex++;
+
+        //  If index exceeds the size of the buffer, reset it back to the start...because, you know...circle.
+        if( uTBuf->bufIndex >= ( uTBuf->bufPtr + BUFSIZE )){ uTBuf->bufIndex = uTBuf->bufPtr; }
+        //  If the index arrives at the start of free space, our buffer is empty
+        //if( uTBuf.bufIndex == uTBuf.freeStartPtr ){ uTBuf.bufEmpty = 1; }
+        if( uTBuf->bufFull == 1 ){ uTBuf->bufFull = 0; }
 
         //  Recalculate free space
         //  There are three cases: start pointer > end pointer, the other way around and them being equal
-        if( uBuf.freeStartPtr > uBuf.freeEndPtr ){ 
-            uBuf.freeSpace = ( BUFSIZE - (int)uBuf.freeStartPtr ) - ( uBuf.freeEndPtr - uBuf.bufPtr );
+        if( uTBuf->freeStartPtr > uTBuf->bufIndex ){
+            uTBuf->freeSpace = ( BUFSIZE - (int)uTBuf->freeStartPtr ) - ( uTBuf->bufIndex - uTBuf->bufPtr );
         }
 
-        else if( uBuf.freeStartPtr < uBuf.freeEndPtr ){
-            uBuf.freeSpace = ( uBuf.freeEndPtr - uBuf.freeStartPtr ) + 1;
+        else if( uTBuf->freeStartPtr < uTBuf->bufIndex ){
+            uTBuf->freeSpace = ( uTBuf->bufIndex - uTBuf->freeStartPtr ) + 1;
         }
 
         //  If freeStartPtr = freeEndPtr, this means there is one byte of free space
         //  The ISR guarantees at least one free byte of space
         else{
-            uBuf.freeSpace = 1;
+            uTBuf->freeSpace = 1;
         }
 
-        uBuf.bufIndex++;
+        IFS0bits.U1TXIF = 0;
 
+
+    }*/
+
+    
+    if( uTBuf.bufEmpty == 1 ){
+        IFS0bits.U1TXIF = 0;
+
+    }
+
+    else if( uTBuf.bufEmpty == 0 ){
+
+        U1TXREG = *( uTBuf.bufIndex );       //  Should this belong here???
+        uTBuf.bufIndex++;
 
         //  If index exceeds the size of the buffer, reset it back to the start...because, you know...circle.
-        if( uBuf.bufIndex >= ( uBuf.bufPtr + BUFSIZE )){ uBuf.bufIndex = uBuf.bufPtr; }
+        if( uTBuf.bufIndex >= ( uTBuf.bufPtr + BUFSIZE )){ uTBuf.bufIndex = uTBuf.bufPtr; }
         //  If the index arrives at the start of free space, our buffer is empty
-        if( uBuf.bufIndex == uBuf.freeStartPtr ){ uBuf.bufEmpty = 1; }
+        if( uTBuf.bufIndex == uTBuf.freeStartPtr ){ uTBuf.bufEmpty = 1; }
+        if( uTBuf.bufFull == 1 ){ uTBuf.bufFull = 0; }
+
+        //  Recalculate free space
+        //  There are three cases: start pointer > end pointer, the other way around and them being equal
+        if( uTBuf.freeStartPtr > uTBuf.bufIndex ){
+            uTBuf.freeSpace = ( BUFSIZE - (int)uTBuf.freeStartPtr ) - ( uTBuf.bufIndex - uTBuf.bufPtr );
+        }
+
+        else if( uTBuf.freeStartPtr < uTBuf.bufIndex ){
+            uTBuf.freeSpace = ( uTBuf.bufIndex - uTBuf.freeStartPtr ) + 1;
+        }
+
+        //  If freeStartPtr = freeEndPtr, this means there is one byte of free space
+        //  The ISR guarantees at least one free byte of space
+        else{
+            uTBuf.freeSpace = 1;
+        }
+
+        IFS0bits.U1TXIF = 0;
+
 
     }
 }
