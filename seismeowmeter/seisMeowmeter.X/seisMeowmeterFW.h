@@ -12,7 +12,7 @@
 #ifndef SEISMEOWMETERFW_H
 #define	SEISMEOWMETERFW_H
 #define FCY 8000000
-#define BAUDRATE 19200
+#define BAUDRATE 9600
 #define BRGVAL ((FCY/BAUDRATE)/16)-1
 #define T1PRESCALE 64
 #define BUFSIZE 256
@@ -27,7 +27,7 @@
 */
 
 typedef struct{
-    char buffer[BUFSIZE];
+    unsigned char buffer[BUFSIZE];
     int length;
     volatile int start;
     volatile int end;
@@ -38,11 +38,12 @@ static unsigned int brgValue;
 
 int setupAnalog( unsigned int );
 int setupUART();
+int readCommand(ringBuf_t *buf);
 
 //  Ring Buffer functions
 int buf_create(ringBuf_t *buf);
-int buf_write(ringBuf_t *buf, char *data, int length);
-int buf_read(ringBuf_t *buf, char *target, int amount);
+int buf_write(ringBuf_t *buf, unsigned char *data, int length);
+int buf_read(ringBuf_t *buf, unsigned char *target, int amount);
 int buf_availableData(ringBuf_t *buf);
 int buf_availableSpace(ringBuf_t *buf);
 

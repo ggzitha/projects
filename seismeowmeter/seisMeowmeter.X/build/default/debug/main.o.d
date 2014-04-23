@@ -1,3 +1,4 @@
 build/default/debug/main.o:  \
 main.c  \
-seisMeowmeterFW.h 
+seisMeowmeterFW.h  \
+debug.h 

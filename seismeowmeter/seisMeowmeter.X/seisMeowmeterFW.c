@@ -48,8 +48,6 @@ int setupAnalog( unsigned int sampleRate ){
 
 int setupUART(){
 
-    //brgValue = ( FCY / ( 16 * baudRate )) - 1;
-
     U1MODEbits.UARTEN = 0;
     U1STAbits.UTXEN = 0;
 
@@ -61,7 +59,7 @@ int setupUART(){
     U1MODEbits.LPBACK = 0;
     U1MODEbits.ABAUD = 0;
     U1MODEbits.URXINV = 0;
-    U1MODEbits.BRGH = 0;            //  Enable low speed mode
+    U1MODEbits.BRGH = 0;
     U1MODEbits.PDSEL = 0b00;
     U1MODEbits.STSEL = 0;
 
@@ -69,23 +67,24 @@ int setupUART(){
     U1STAbits.UTXISEL0 = 0;
     U1STAbits.UTXINV = 0;
     U1STAbits.UTXBRK = 0;
-
+    U1STAbits.URXISEL = 0;
 
     U1BRG = BRGVAL;
 
-    IFS0bits.U1TXIF = 0;            // Clear UART interrupt flag
-    IEC0bits.U1TXIE = 1;            // Enable UART interrupts
+    IFS0bits.U1TXIF = 0;
+    IFS0bits.U1RXIF = 0;
+    IEC0bits.U1TXIE = 1;
+    IEC0bits.U1RXIE = 1;
 
-    RPOR7bits.RP15R = 0b000011;     //  Set UART TX Pin to RP15
+    RPOR7bits.RP15R = 0b000011;
+    RPINR18bits.U1RXR = 0b00011;
 
     U1MODEbits.UARTEN = 1;
     U1STAbits.UTXEN = 1;
 
     return 0;
-
 }
 
-//  Not overly sure if this function is all that necessary...
 int buf_create(ringBuf_t *buf){
 
     buf->length = BUFSIZE + 1;
@@ -99,7 +98,7 @@ int buf_create(ringBuf_t *buf){
         return 0;
 }
 
-int buf_write(ringBuf_t *buf, char *data, int length){
+int buf_write(ringBuf_t *buf, unsigned char *data, int length){
 
     if(buf_availableData(buf) == 0){
         buf->start = buf->end = 0;
@@ -119,7 +118,7 @@ int buf_write(ringBuf_t *buf, char *data, int length){
 
 }
 
-int buf_read(ringBuf_t *buf, char *target, int amount){
+int buf_read(ringBuf_t *buf, unsigned char *target, int amount){
 
     if(amount > buf_availableData(buf))
         return -1;
@@ -143,4 +142,31 @@ int buf_availableData(ringBuf_t *buf){
 
 int buf_availableSpace(ringBuf_t *buf){
     return buf->length - buf->end -1;
+}
+
+int readCommand(ringBuf_t *buf){
+    unsigned char target;
+    unsigned char *ptarget = &target;
+    int status;
+
+    status = buf_read(buf, ptarget, 1);
+
+    if(status == -1)    //  Nothing in comand buffer
+        return -1;
+
+    else{
+
+        switch(target){
+
+            case 0:
+                return 2;
+                break;
+
+            default:
+                return 3;
+                break;
+        }
+    }
+        return 0;
+
 }
